@@ -1,5 +1,5 @@
 ext {
-    roboVMVersion = "2.3.3-SNAPSHOT"
+    roboVMVersion = "2.3.3"
 }
 apply plugin: 'robovm'
 
