@@ -90,4 +90,26 @@ public class AMAnswerMeSDKImpl extends NSObject {
         return new AMCounterImpl();
     }
 
+
+    @Method(selector = "npe:")
+    public void npe(String input){
+        Foundation.log("Start NPE - input: " + input);
+        try {
+            input.charAt(0);  // exception on null
+        }catch(NullPointerException e){
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        Foundation.log("End NPE - input: " + input);
+    }
+
+    @Method(selector = "gc")
+    public void gd(){
+        for(int i = 0 ; i < 5 ; i++){
+            System.gc();
+        }
+    }
+
 }

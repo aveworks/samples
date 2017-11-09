@@ -26,5 +26,7 @@
 
 + (AMAnswerMeSDK*) instance;
 - (AMCounter*) obtainAMCounter;
+- (void) npe:(NSString *) input;
+- (void) gc;
 
 @end

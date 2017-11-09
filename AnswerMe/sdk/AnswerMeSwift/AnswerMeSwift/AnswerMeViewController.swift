@@ -53,5 +53,9 @@ class AnswerMeViewController: UIViewController {
         counter.addValue(1);
         updateLabel();
     }
+    @IBAction func actionNPE(_ sender: Any) {
+        sdk.npe("all good!");
+        sdk.npe(nil);
+    }
 }
 
