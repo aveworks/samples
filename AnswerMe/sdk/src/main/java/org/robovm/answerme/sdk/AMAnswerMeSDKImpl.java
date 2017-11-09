@@ -15,6 +15,7 @@
  */
 package org.robovm.answerme.sdk;
 
+import java.net.URI;
 import java.util.List;
 
 import org.robovm.apple.foundation.Foundation;
@@ -94,6 +95,21 @@ public class AMAnswerMeSDKImpl extends NSObject {
     @Method(selector = "npe:")
     public void npe(String input){
         Foundation.log("Start NPE - input: " + input);
+
+        if(input != null){
+            try {
+                URI.create(input);
+            } catch(IllegalArgumentException e){
+                e.printStackTrace();
+                Foundation.log("IllegalArgumentException caught");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }else{
+            Foundation.log("input is null");
+        }
+
+
         try {
             input.charAt(0);  // exception on null
         }catch(NullPointerException e){
